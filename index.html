@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pão de Queijo Minas da CICI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <button class="cart-float-button" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-float-count" id="cart-float-count">0</span>
+    </button>
+
+    <div id="side-cart" class="side-cart">
+        <div class="side-cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Seu Carrinho</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="side-cart-items" class="side-cart-items">
+            <!-- Items will be added here dynamically -->
+        </div>
+        <div class="side-cart-footer">
+            <div class="side-cart-total">
+                <p>Total: R$ <span id="side-cart-total">0.00</span></p>
+            </div>
+            <button onclick="sendWhatsApp()" class="whatsapp-checkout">
+                <i class="fab fa-whatsapp"></i>
+                Fazer Pedido
+            </button>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-bread-slice"></i>
+                    Pão de Queijo da CICI
+                </div>
+            </nav>
+        </header>
+        <div class="hero-content">
+            <h1>O Melhor Pão de Queijo de Minas</h1>
+            <p>Sabor autêntico e qualidade incomparável</p>
+        </div>
+    </div>
+
+    <main>
+        <section class="products">
+            <h2>Nossos Produtos</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/pao-tradicional.jpg" alt="Pão de Queijo Tradicional" class="product-image">
+                    <div class="product-info">
+                        <h3>Pão de Queijo Tradicional</h3>
+                        <p>Delicioso pão de queijo mineiro tradicional</p>
+                        <p class="price">R$ 25,00</p>
+                        <button onclick="addToCart('Tradicional', 25.00)" class="add-to-cart-btn">
+                            <i class="fas fa-cart-plus"></i>
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Seu Carrinho</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <p>Total: R$ <span id="cart-total">0.00</span></p>
+            </div>
+            <div class="modal-buttons">
+                <button id="whatsapp-button" onclick="sendWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    Fazer Pedido pelo WhatsApp
+                </button>
+                <button onclick="closeModal()" class="continue-shopping">
+                    Continuar Comprando
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3><i class="fas fa-bread-slice"></i> Pão de Queijo Minas da CICI</h3>
+                <p>O verdadeiro sabor de Minas Gerais</p>
+            </div>
+            <div class="footer-contact">
+                <p><i class="fab fa-whatsapp"></i> (31) 99651-9655</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pão de Queijo Minas da CICI. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
